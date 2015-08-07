@@ -194,3 +194,5 @@ pagination:
     per_page: 10
   comment:
     per_page: 5
+zero: 0
+num_of_address_slide_show: 5

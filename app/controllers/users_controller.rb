@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     @form_user = FormUser.find params[:id]
     @sort = params[:type]
-    @recent_addresses = @user.addresses.order("created_at DESC") 
+    @recent_addresses = @user.addresses.order("created_at DESC").
+      limit(Settings.num_of_address_slide_show)
     @addresses = if @sort.blank?
       @user.addresses.page params[:page]
     else

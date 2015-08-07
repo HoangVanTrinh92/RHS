@@ -8,8 +8,8 @@ class Address < ActiveRecord::Base
   validates :capacity, presence: true
   validates :contact, presence: true
   validates :address, presence: true
-  validates :square, presence: true
-  validates :price, presence: true
+  validates_numericality_of :square, greater_than: Settings.zero
+  validates_numericality_of :price, greater_than: Settings.zero
   validates :description, presence: true
   validates :lat, presence: true
   validates :lng, presence: true
